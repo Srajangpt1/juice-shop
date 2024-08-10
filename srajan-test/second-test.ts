@@ -6,9 +6,8 @@ interface UserComment {
   content: string;
 }
 
-// Function to render user comments as HTML
+// render user comments as HTML
 function renderUserComment(comment: UserComment) {
-  // Simulate a situation where content is conditionally sanitized
   const shouldSanitize = Math.random() > 0.5;
   let sanitizedContent;
 
@@ -20,7 +19,6 @@ function renderUserComment(comment: UserComment) {
     sanitizedContent = comment.content;
   }
 
-  // Render the content as HTML
   const commentElement = document.createElement('div');
   commentElement.innerHTML = `
     <div class="comment">
@@ -32,12 +30,11 @@ function renderUserComment(comment: UserComment) {
   document.body.appendChild(commentElement);
 }
 
-// Example usage with unsafe user input
+// Example
 const userComment: UserComment = {
   id: 1,
   author: "Attacker",
   content: "<img src='x' onerror='alert(\"XSS\")'>"
 };
 
-// Render the comment
 renderUserComment(userComment);
