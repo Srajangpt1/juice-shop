@@ -10,7 +10,7 @@ def log_command(func):
         return func(*args, **kwargs)
     return wrapper
 
-# Function to run a shell command
+# run a shell command
 @log_command
 def run_command(command: str):
     # Vulnerable command execution

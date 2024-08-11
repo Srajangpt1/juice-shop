@@ -28,8 +28,6 @@ type User = {
 
 // Function that manipulates deeply partial types
 function updateUserProfile(userId: number, profileUpdates: DeepPartial<User>) {
-  // Imagine this function updates a user profile in a database
-  // Incorrect assumptions could be made here, leading to runtime errors or incorrect updates
   if (profileUpdates.id) {
     console.log(`Updating ID for user ${userId} to ${profileUpdates.id}`);
     // An attacker could try to set an invalid type for `id` leading to potential issues.
@@ -50,12 +48,12 @@ function updateUserProfile(userId: number, profileUpdates: DeepPartial<User>) {
 
 // Example of an unsafe call that might not be detected by CodeQL
 const unsafeUpdate = {
-  id: '123', // Incorrect type, should be number
+  id: '123', 
   preferences: {
-    theme: 'midnight', // Invalid theme, should be 'dark' or 'light'
+    theme: 'midnight',
   },
   friends: [
-    { name: 'Alice', id: 'invalid-id' } // Incorrect type, should be number
+    { name: 'Alice', id: 'invalid-id' }
   ]
 };
 
