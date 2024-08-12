@@ -3,7 +3,7 @@ from file_reader import read_file
 
 # Function with a path traversal vulnerability
 def analyze_file(file_name):
-    base_dir = "/var/data/"
+    base_dir = "/var/"
     full_path = os.path.join(base_dir, file_name)
     if not os.path.isfile(full_path):
         print(f"File {full_path} does not exist.")

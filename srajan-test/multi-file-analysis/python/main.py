@@ -1,7 +1,6 @@
 from analyzer import analyze_file, execute_analysis_script
 from encryption import encrypt_data, decrypt_data
 
-# Main function to execute cross-file analysis
 def main():
     # Get the file name from the user
     file_name = input("Enter the file name to analyze: ")
