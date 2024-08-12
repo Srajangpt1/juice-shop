@@ -1,5 +1,6 @@
 import pickle
-
+from flask import Flask, request, jsonify
+app =  Flask(__name__)
 def load_order(order_data):
     return pickle.loads(order_data)
 
