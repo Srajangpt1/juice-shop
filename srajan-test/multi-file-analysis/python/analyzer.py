@@ -1,5 +1,6 @@
 import os
 from file_reader import read_file
+import subprocess
 
 # Function with a path traversal vulnerability
 def analyze_file(file_name):
@@ -16,4 +17,4 @@ def analyze_file(file_name):
 # Vulnerable to command injection
 def execute_analysis_script(script_name, file_name):
     command = f"python3 {script_name} {file_name}"
-    os.system(command)
+    subprocess.call(command, shell=True)
