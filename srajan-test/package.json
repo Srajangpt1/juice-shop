@@ -1,0 +1,5 @@
+"scripts": {
+  "tsoa:routes": "tsoa routes",
+  "tsoa:spec": "tsoa spec",
+  "build": "npm run tsoa:routes && npm run tsoa:spec && tsc"
+}
